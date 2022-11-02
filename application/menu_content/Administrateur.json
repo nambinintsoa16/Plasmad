@@ -1,0 +1,68 @@
+{
+    "couleur_base": "rgb(0, 98, 235)",
+    "couleur_nav": "linear-gradient(rgb(0, 185, 249), rgb(0, 98, 235))",
+    "menu": [{
+            "text": "Utilisateurs",
+            "icon": "fa fa-users",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouveaux",
+                    "icon": "fa fa-edit",
+                    "link": "Administrateur/Utilisateur/nouveau"
+                },
+                {
+                    "text": "Liste",
+                    "icon": "fa fa-list",
+                    "link": "Administrateur/Utilisateur/liste"
+                }
+            ]
+        }, {
+            "text": "Operateur",
+            "icon": "fa fa-users",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouveaux",
+                    "icon": "fa fa-edit",
+                    "link": "Administrateur/operateur/nouveau"
+                },
+                {
+                    "text": "Liste",
+                    "icon": "fa fa-list",
+                    "link": "Administrateur/operateur/liste"
+                }
+            ]
+        }, {
+            "text": "Machine",
+            "icon": "fa fa-users",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouveaux",
+                    "icon": "fa fa-edit",
+                    "link": "Administrateur/Machine/nouveau"
+                },
+                {
+                    "text": "Liste",
+                    "icon": "fa fa-list",
+                    "link": "Administrateur/Machine/liste"
+                }
+            ]
+        }, {
+            "text": "Templet Prix",
+            "icon": "fa fa-mone",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Parametre",
+                    "icon": "fa fa-edit",
+                    "link": "Administrateur/Templet/Parametre"
+                },
+                {
+                    "text": "Liste",
+                    "icon": "fa fa-list",
+                    "link": "Administrateur/Templet/liste"
+                }
+            ]
+        }
+
+
+    ]
+}

@@ -1,0 +1,338 @@
+{
+	"couleur_base" : "rgb(255, 200, 0)",
+	"couleur_nav" : "linear-gradient(rgb(249, 202, 0), rgb(250, 237, 0))",
+	"menu" : [
+		{
+			"text" : "Accueil",
+			"icon" : "home.ico",
+			"link" : "controlleur/"
+		},
+		{
+			"text" : "Ressource humaines",
+			"icon" : "Ressource_humaines.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Ressource globale",
+					"icon" : "RessourceG.ico",
+					"link" : "controlleur/RessourceHumaine/globales"
+				},
+				{
+					"text" : "Ressource affectée",
+					"icon" : "RessourceE.ico",
+					"link" : "controlleur/RessourceHumaine/affectees"
+				}
+			]
+		},
+		{
+			"text" : "Paramètre des opérations",
+			"icon" : "parammetre.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Paramètre du jour",
+					"icon" : "parametres.ico",
+					"link" : "controlleur/ParametreOperations"
+				},
+				{
+					"text" : "Creation du Mission",
+					"icon" : "plus.ico",
+					"link" : "controlleur/InfoGenerale/CreationMission"
+				}
+			]
+		},{
+			"text" : "Produits",
+			"icon" : "produit.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Liste",
+					"icon" : "panning.ico",
+					"link" : "controlleur/Outils/Mes_Produits"
+				},{
+					"text" : "Prix",
+					"icon" : "ca_1.ico",
+					"link" : "controlleur/Outils/prix_des_produits"
+				}
+				
+				
+				
+				
+			]
+		},
+		{
+			"text" : "Planning des paniers",
+			"icon" : "panning.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Panier disponible",
+					"icon" : "icon",
+					"link" : "controlleur/Panier/disponible"
+				},
+				{
+					"text" : "Panier du jour",
+					"icon" : "icon",
+					"link" : "controlleur/Panier/jour"
+				},
+				{
+					"text" : "Créer panier",
+					"icon" : "icon",
+					"link" : "controlleur/Panier/Creer_Panier"
+				}
+			]
+		},
+		{
+			"text" : "Rémuneration",
+			"icon" : "Remuneration.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Salaire du mois en cours",
+					"icon" : "salaire.ico",
+					"link" : "controlleur/"
+				}
+			]
+		},
+		{
+			"text" : "Chiffre d'affaire",
+			"icon" : "CA.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "C . A du jour",
+					"icon" : "cas.ico",
+					"link" : "controlleur/ChiffreAffaire/Chiffre/jour"
+				},
+				{
+					"text" : "C . A de la veille",
+					"icon" : "cas.ico",
+					"link" : "controlleur/ChiffreAffaire/Chiffre/veille"
+				},
+				{
+					"text" : "C . A du mois  ",
+					"icon" : "cas.ico",
+					"link" : "controlleur/MoisControleur/Mois"
+				},
+				{
+					"text" : "C . A du mois Passe ",
+					"icon" : "cas.ico",
+					"link" : "controlleur/MoisControleur/MoisPasse"
+				},
+				{
+					"text" : "rapprochement",
+					"icon" : "Balance.ico",
+					"link" : "controlleur/Outils/AjoutVente"
+				}
+			]
+		},
+		{
+			"text" : "Planning sur térrain",
+			"icon" : "planning_terrain.ico",
+			"link" : "controlleur/Planingterrain/terrain"
+		},
+		{
+			"text" : "Stocks",
+			"icon" : "stock.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Etat du stoks mois en cours",
+					"icon" : "icon",
+					"link" : "controlleur/Stock/Stock_Mois"
+				}
+			]
+		},
+		{
+			"text" : "Challenge",
+			"icon" : "challenge.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Challenge et Avantages",
+					"icon" : "icon",
+					"link" : "controlleur/"
+				},
+				{
+					"text" : "Ajout  Privileges",
+					"icon" : "icon",
+					"link" : "controlleur/Challenge/AjoutPrivileges"
+				},
+				{
+					"text" : "Suivi challenge",
+					"icon" : "icon",
+					"link" : "controlleur/"
+				}
+			]
+		},
+		{
+			"text" : "Offres promotionnelle",
+			"icon" : "promo.ico",
+			"link" : "controlleur/"
+		},
+		{
+			"text" : "Informations Generales",
+			"icon" : "info.ico",
+			"link" : "",
+			"sous_menu":[
+
+				{
+					"text" : "Liste Commercials ",
+					"icon" : "liste.ico",
+					"link" : "controlleur/InfoGenerale/ListeCommerciale"
+				},
+				{
+					"text" : "Creation Profils",
+					"icon" : "createUser.ico",
+					"link" : "controlleur/InfoGenerale/CreationProfils"
+				},
+				{
+					"text" : "Deduction Prime du Coach",
+					"icon" : "moin.ico",
+					"link" : "controlleur/InfoGenerale/deductionPrimeCoach"	
+				},
+				{
+					"text" : "Liste Coach",
+					"icon" : "liste.ico",
+					"link" : "controlleur/InfoGenerale/listeCoach"	
+				},
+				{
+					"text" : "Les Accompagnements",
+					"icon" : "liste.ico",
+					"link" : "controlleur/InfoGenerale/Accompagnement"	
+				}
+
+			]
+		},
+		{
+			"text" : "Informations Personnels",
+			"icon" : "info_ge.ico",
+			"link" : "",
+			"sous_menu":[
+
+				{
+					"text" : "Information Commercials ",
+					"icon" : "icon",
+					"link" : "controlleur/InfoPersonnels/InfoCommercial"
+				},
+				{
+					"text" : "Rectification Ventes",
+					"icon" : "icon",
+					"link" : "controlleur/InfoPersonnels/Rectifier"
+				},
+				{
+					"text" : "Ventes Accompagnements",
+					"icon" : "icon",
+					"link" : "controlleur/InfoPersonnels/VentesAccompagnements"	
+				},
+				{
+					"text" : "Mise en Place",
+					"icon" : "icon",
+					"link" : "controlleur/InfoPersonnels/MiseEnPlace"	
+				}
+				
+			]
+		},
+
+		{
+			"text" : "Importation",
+			"icon" : "important.ico",
+			"link" : "",
+			"sous_menu":[
+
+				{
+					"text" : "Mise a Jour Malus",
+					"icon" : "update.ico",
+					"link" : "controlleur/Import/Importation/malus"
+				},
+				{
+					"text" : "Mise a Jour Panier ",
+					"icon" : "update.ico",
+					"link" : "controlleur/Import/Importation/panier"
+				},
+				{
+					"text" : "Mise a Jour Prix ",
+					"icon" : "update.ico",
+					"link" : "controlleur/Import/Importation/prix"
+				},
+				{
+					"text" : "Mise a Jour Salaire",
+					"icon" : "update.ico",
+					"link" : "controlleur/Import/Importation/salaire"
+				},
+				{
+					"text" : "Mise a Jour Sanction",
+					"icon" : "update.ico",
+					"link" : "controlleur/Import/Importation/sanction"
+				},
+				{
+					"text" : "Mise a Jour Sortie",
+					"icon" : "update.ico",
+					"link" : "controlleur/Import/Importation/sortie"
+				},
+				{
+					"text" : "Importation du Profils",
+					"icon" : "upload.ico",
+					"link" : "controlleur/Import/Importation/profils"
+				}
+			]
+		},
+		{
+			"text" : "Outil développement",
+			"icon" : "dev.ico",
+			"link" : "",
+			"sous_menu" : [
+				{
+					"text" : "Mes équipes en province",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Equipe/province"
+				},
+				{
+					"text" : "Mes équipes en local",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Equipe/local"
+				},
+				{
+					"text" : "Exporter point  ",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/ExportationPoints"
+				},
+				{
+					"text" : "Ajout Vente",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/AjoutVente"
+				},
+				{
+					"text" : "Vente Journalier",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Vente_Journalier"
+				},
+				{
+					"text" : "Ressources",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Ressources"
+				},
+				{
+					"text" : "Points",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Points"
+				},
+				{
+					"text" : "Nouveau Planning ",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Nouveau_Planning"
+				},
+				{
+					"text" : "Mes Produits",
+					"icon" : "icon",
+					"link" : "controlleur/Outils/Mes_Produits"
+				}
+			]
+		},
+		{
+			"text" : "Se déconnecter",
+			"icon" : "logout.ico",
+			"link" : "Authentification/Deconnexion"
+		}
+	]
+}
