@@ -1,45 +1,64 @@
 <div class="col-md-12 text-right p-2">
-<fieldset class="border p-2 bg-white mb-2 text-right">
-<a href="<?=base_url("Planning/printExtrusionInpression")?>" class="btn btn-warning"><i class="fa fa-print"></i> Imprimer</a>
-<a href="#" class="btn btn-primary printJobs"><i class="fa fa-print"></i> Imprimer JobCart</a>
-</fieldset>
+	<fieldset class="border p-2 bg-white mb-2 text-right">
+		<a href="<?= base_url("Planning/printExtrusionInpression") ?>" class="btn btn-warning"><i class="fa fa-print"></i> Imprimer</a>
+		<a href="#" class="btn btn-primary printJobs"><i class="fa fa-print"></i> Imprimer JobCart</a>
+	</fieldset>
 </div>
 </div>
-<?php foreach ($machine as $key => $machine):?>
-<div class="col-md-12 p-2 bg-dark text-white">
-        <span class="col-md-3"><?= $machine->MA_DESIGNATION?> </span>
-		<span><a href="<?=base_url("Planning/exportMachineImpre?machine=$machine->MA_DESIGNATION")?>" class="text-success"><i class="fa fa-print"></i></a></span>
-        <span class="pull-right" style="font-size:11px"><p class="text-right collapsed" data-toggle="collapse" data-target="#tab_<?=$machine->MA_ID?>"> <i class="fa fa-plus " aria-expanded="false"></i></p></span>
-</div>
-    <div clas="row pt-2" style="padding:10px 2px;">
-        <div class="col-md-12">
-            <div class="d-flex justify-content-between">
-                <p>
-					
-			
-			     </p>  
-            </div>
-			<fieldset class="border p-2 bg-white mb-2 text-right">	
-                <button class="btn btn-success addProd"><i class="fa fa-plus"></i>&nbsp;Ajouter Production</button>
-            </fieldset>
+<?php foreach ($machine as $key => $machine) : ?>
+	<?php
+	$this->load->model('Production_model');
+	$data = "";
+	$param = "";
+	$sommeFini = 0;
+	$previ = 0;
+	$param = [
+		"JO_MACHINE_PRINT" => $machine->MA_DESIGNATION,
+		"JO_TYPE" => "IMPRESSION_EXTRUSION",
+		"JO_STATUT" => "PLANIFIER"
+	];
+
+
+	$donnee = $this->planning_model->selectJobCardComm($param);
+	$data = ["data" => $donnee, "Vitesse" => 1];
+	foreach ($donnee as $key => $donnee) {
+		$sommeFini += $donnee->JO_AV;
+		$previ += $donnee->JO_SORTIE;
+	}
+
+	?>
+	<div class="col-md-12 p-2 bg-dark text-white">
+		<span class="col-md-3"><?= $machine->MA_DESIGNATION ?> </span>
+		<span><a href="<?= base_url("Planning/exportMachineImpre?machine=$machine->MA_DESIGNATION") ?>" class="text-success"><i class="fa fa-print"></i></a></span>
+		<span class="pull-right" style="font-size:11px">
+			<p class="text-right collapsed" data-toggle="collapse" data-target="#tab_<?= $machine->MA_ID ?>"> <i class="fa fa-plus " aria-expanded="false"></i></p>
+		</span>
+		<span>&nbsp;&nbsp;<a href="#" class="text-white">Capacité de la machine : <?= $machine->CAPACITE ?></a></span>
+		<span>&nbsp;&nbsp;<a href="#" class="text-white">Production prévisionnelle : <?= $previ ?></a></span>
+		|<span>&nbsp;&nbsp;<a href="#" class="text-white">Términer : <?= $sommeFini ?></a></span>
+		|<span>&nbsp;&nbsp;<a href="#" class="text-white">Reste à produire : <?= $previ - $sommeFini ?></a></span>
+
+	</div>
+	<div clas="row pt-2" style="padding:10px 2px;">
+		<div class="col-md-12">
+			<div class="d-flex justify-content-between">
+				<p>
+
+
+				</p>
+			</div>
+			<fieldset class="border p-2 bg-white mb-2 text-right">
+				<button class="btn btn-success addProd"><i class="fa fa-plus"></i>&nbsp;Ajouter Production</button>
+			</fieldset>
 			<fieldset class="border p-2 bg-white">
-            <div class="" id="tab_<?=$machine->MA_ID?>" style="padding: 0px;">
-                <?php 
-				$this->load->model('Production_model');
-				$data = "";
-				$param = "";
-				$param = [
-                   "JO_MACHINE_PRINT"=>$machine->MA_DESIGNATION,
-                   "JO_TYPE"=>"IMPRESSION_EXTRUSION",
-                   "JO_STATUT"=>"PLANIFIER"
-				];
-				
-				$data = [ "data"=>$this->planning_model->selectJobCardComm($param),"Vitesse"=>1]; 
-				$this->load->view('Planning\tableleEXtrusion',$data); ?>
-            </div></fieldset>
+				<div class="" id="tab_<?= $machine->MA_ID ?>" style="padding: 0px;">
+					<?php
+					$this->load->view('Planning\tableleEXtrusion', $data); ?>
+				</div>
+			</fieldset>
 		</div>
 	</div>
-<?php endforeach;?>			
+<?php endforeach; ?>
 
 
 <div class="modal fade modalmachine" id="exampleModalCentere" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -215,7 +234,7 @@
 					<div class="row">
 						<div class="form-group col-md-6">
 							<label for="BC_PE">JOB ID : </label>
-							<input type="text" name="BC_PE"  class="form-control form-control-sm jobIDUPDATE" value="">
+							<input type="text" name="BC_PE" class="form-control form-control-sm jobIDUPDATE" value="">
 						</div>
 
 						<div class="form-group col-md-6">
@@ -227,8 +246,8 @@
 							<input type="date" id="date_prod" name="date_prod" class="form-control form-control-sm date_prodUPDATE">
 						</div>
 
-						
-					
+
+
 					</div>
 				</fieldset>
 			</div>
@@ -240,249 +259,89 @@
 	</div>
 </div>
 <script>
-    $(document).ready(function(){
-    
-		$('.updateDate').on('click',function(e){
+	$(document).ready(function() {
+
+		$('.updateDate').on('click', function(e) {
 			e.preventDefault();
-			 $('.jobIDUPDATE').val($(this).parent().parent().children().eq(2).text());
+			$('.jobIDUPDATE').val($(this).parent().parent().children().eq(2).text());
 			$('#modaUpdatetime').modal('show');
 
 		});
-		$('.UpdateDatePlane').on('click',function(e){
-         	e.preventDefault();
-         	var updatePO = $('.jobIDUPDATE').val();
+		$('.UpdateDatePlane').on('click', function(e) {
+			e.preventDefault();
+			var updatePO = $('.jobIDUPDATE').val();
 			var DEBUUPDATE = $('.DEBUUPDATE').val();
 			var date_prodUPDATE = $('.date_prodUPDATE').val();
-         	$.post(base_url+"Planning/updateTimeImpression",{
-         		updatePO:updatePO,
-				DEBUUPDATE:DEBUUPDATE,
-				date_prodUPDATE:date_prodUPDATE,
-         	},function(data){
-				$('.jobIDUPDATE').val("");
-			    $('.DEBUUPDATE').val("");
-			    $('.date_prodUPDATE').val("");
-				$('#modaUpdatetime').modal('hide');
-			    alertMessage("Succée!", "Date et heure modifier avec succée!", "success", "btn btn-success");
-         	});
- 
-         });
-		 $('.addProd').on('click',function(e){
-   	e.preventDefault();
-   	$('#jobMachine').modal("show");
-   });
-   $('.BC_PEE').autocomplete({
-      source:base_url+'Planning/autocompleteBon',
-	  appendTo:"#jobMachine"
-
-   });
-   $.post(base_url+"Planning/lastIdJob",{},function(data){
-               $('.JO_IDE').empty().val(data);
-			});	
-			
-			
-
-$('.date_prodEE').on('change',function(event){
-  event.preventDefault();
-  var date = $(this).val(); 
-  var poids = $('.ENPRODUCTIONE').val();
-  var machine = $('.DJ_MACHINEE option:selected').val();
-  var processus = $('.BC_STATUTE option:selected').val();
-
-   if(poids!=""){ 
-    $.post(base_url+'Planning/calculePlanning',{poids:poids,date:date,machine:machine,BC_STATUT:processus},function(data){
-      if(data.message=="true"){
-        $('.heureE').val(data.dure);
-        $('.hdebE').val(data.hdeb);
-        $('.dateFInE').val(data.dateFIn);
-        $('.heurefinE').val(data.heurefin);
-        $('#jobMachine').modal("show");
-      }else if(data.message=="over"){
-       // alertMessage("Erreur!","Date non disponible! Veuillez choisir un autre!","error","btn btn-danger");
-
-		swal("Ooops!!","Date non disponible! Veuillez choisir un autre!", {
-        icon : 'error',
-        buttons: {              
-            confirm: {
-                className : 'btn btn-danger'
-                     }
-                },
-        });
-
-
-
-        $('.heureE').val('');
-        $('.hdebE').val('');
-        $('.dateFIn').val('');
-        $('.dateFInE').val('');
-        $('.date_prodEE').val('');
-
-      }else if(data.message=="init"){
-        $('#jobMachine').modal("hide");
-        swal({
-          title:'DUREE',
-          html: '',
-          content: {
-            element: "input",
-            attributes: {
-              type: "time",
-              id: "input-field",
-              className: "form-control"
-            },
-          },
-          buttons: {
-            cancel: {
-              visible: true,
-              className: 'btn btn-danger'
-            },
-            confirm: {
-              className : 'btn btn-success'
-            }
-          },
-        }).then(
-        function() {
-          var hdeb = $('#input-field').val();
-          $.post(base_url+'Planning/tempsDeProduction',{processus:processus,date:date,poids:poids,machine:machine,heure:hdeb},function(data){
-             $('.heureE').val(data.dure);
-             $('.hdebE').val($('#input-field').val());
-             $('.dateFInE').val(data.dateFIn);
-             $('.heurefinE').val(data.heurefin);
-             $('#jobMachine').modal("show");
-          },'json');
-           
-        }
-        );
-
-      }else{  
-        alertMessage("Ooops!!",data.observation,'error','btn btn-danger');
-        $('.heureE').val('');
-        $('.hdebE').val('');
-        $('.dateFInE').val('');
-        $('.heurefinE').val('');
-        $('.date_prodEE').val('');
-      }
-
-    },'json');
-  }else{
-
-	swal("Ooops!!","Champs 'POIDS EN KG AVEC MARGE' est obligatoire", {
-        icon : 'error',
-        buttons: {              
-            confirm: {
-                className : 'btn btn-danger'
-                     }
-                },
-        });
-   // alertMessage("Ooops!!","Champs 'POIDS EN KG AVEC MARGE' est obligatoire",'error','btn btn-danger');
-  }
-
-});
-	
-
-		 $('.UpdateCommandeE').on('click',function(event){
-		   var heure = $('.heureE').val();
-           var hdeb = $('.hdebE').val();
-           var dateFIn = $('.dateFInE').val();
-           var heurefin = $('.heurefinE').val();
-           var date_prod = $('.date_prodEE').val();
-		   var BC_PE = $('.BC_PEE ').val();
-		   var BC_STATUT = $('.BC_STATUTE option:selected').val();
-		   var JO_MACHINE = $('.DJ_MACHINEE option:selected').val();
-		   var JO_DATE = $('.date_prodEE').val();
-		   var JO_ID  =  $('.JO_IDE').val();
-		   var JO_SORTIE  =  $('.ENPRODUCTIONE').val();
-		   
-		$.post(base_url+'Planning/insertJobCart',{JO_SORTIE:JO_SORTIE,date_prod:date_prod,dateFIn:dateFIn,heurefin:heurefin,BC_PE:BC_PE.trim(),JO_DATE:JO_DATE,JO_MACHINE:JO_MACHINE,BC_STATUT:BC_STATUT,JO_ID:JO_ID,heure:heure,hdeb:hdeb},function(data){  
-          $('.heureE').val('');
-          $('.hdebE').val('');
-          $('.dateFInE').val('');
-          $('.heurefinE').val('');
-          $('.date_prodEE').val('');
-		  $('.BC_PEE ').val('');
-          $("#jobMachine").modal("hide");
-          $('.BC_QUANTITEAPRODUIREENMETRE').val();
-          swal("Succé","Job carte enregistre avec success!", {
-				icon : "success",
-				buttons: {              
-					confirm: {
-						className : "btn btn-success"
-							}
-						},
-				});
-          closeDialog();
-        },'json');
-    });
-
-
-		 $.post(base_url + 'Planning/machineModaleTable', {
-			type: "COUPE_EXTRUSION"
-		}, function(data) {
-			$('.DJ_MACHINE').empty();
-			data.forEach(element => $('.DJ_MACHINE').append("<option>" + element + "</option>"));
-		}, 'json');
-
-		var Table = $(".dataTable").dataTable({
-			language: {
-				url: base_url + "assets/dataTableFr/french.json"
-			},
-		});
-
-		$('.editProcessus').on('click', function(event) {
-			event.preventDefault();
-			var BC_PE = $(this).parent().parent().children().eq(1).text().trim();
-			var JO_ID = $(this).parent().parent().children().eq(2).text().trim();
-			var poids = $(this).parent().parent().children().eq(11).text().trim();
-
-			$('.BC_PE').val(BC_PE);
-			$('.JO_ID').val(JO_ID);
-			$('.date_prod').attr('id',poids);
-			$(".editData").modal("show");
-		});
-
-		$('.editP').on('click', function(event) {
-			event.preventDefault();
-			var BC_PE = $(this).parent().parent().children().eq(1).text().trim();
-			var jobs = $(this).parent().parent().children().eq(2).text().trim();
-
-			var type = "IMPRESSION_EXTRUSION";
-			$.post(base_url + "Planning/editPoExtrusion", {
-				BC_PE: BC_PE,
-				jobs: jobs,
-				type: type
+			$.post(base_url + "Planning/updateTimeImpression", {
+				updatePO: updatePO,
+				DEBUUPDATE: DEBUUPDATE,
+				date_prodUPDATE: date_prodUPDATE,
 			}, function(data) {
-				$('.containt-result').empty().append(data);
+				$('.jobIDUPDATE').val("");
+				$('.DEBUUPDATE').val("");
+				$('.date_prodUPDATE').val("");
+				$('#modaUpdatetime').modal('hide');
+				alertMessage("Succée!", "Date et heure modifier avec succée!", "success", "btn btn-success");
 			});
 
 		});
-		
-		$('.date_prod').on('change', function(event) {
+		$('.addProd').on('click', function(e) {
+			e.preventDefault();
+			$('#jobMachine').modal("show");
+		});
+		$('.BC_PEE').autocomplete({
+			source: base_url + 'Planning/autocompleteBon',
+			appendTo: "#jobMachine"
+
+		});
+		$.post(base_url + "Planning/lastIdJob", {}, function(data) {
+			$('.JO_IDE').empty().val(data);
+		});
+
+
+
+		$('.date_prodEE').on('change', function(event) {
 			event.preventDefault();
 			var date = $(this).val();
-			var processus = $('.BC_STATUT option:selected').val();
-			var machine = $('.DJ_MACHINE option:selected').val();
-			var poids=$(this).attr('id');
+			var poids = $('.ENPRODUCTIONE').val();
+			var machine = $('.DJ_MACHINEE option:selected').val();
+			var processus = $('.BC_STATUTE option:selected').val();
+
+			if (poids != "") {
 				$.post(base_url + 'Planning/calculePlanning', {
-					date: date,
 					poids: poids,
+					date: date,
 					machine: machine,
-					BC_STATUT:processus
+					BC_STATUT: processus
 				}, function(data) {
 					if (data.message == "true") {
-				
-						$('.DURE').val(data.dure);
-						$('.DEBU').val(data.hdeb);
-						$('.DATEFIN').val(data.dateFIn);
-						$('.HEUREFIN').val(data.heurefin);
-						$(".editData").modal("show");
+						$('.heureE').val(data.dure);
+						$('.hdebE').val(data.hdeb);
+						$('.dateFInE').val(data.dateFIn);
+						$('.heurefinE').val(data.heurefin);
+						$('#jobMachine').modal("show");
 					} else if (data.message == "over") {
-						alertMessage("Erreur!", "Date non disponible! Veuillez choisir une autre!", "error", "btn btn-danger");
-						$('.DURE').val('');
-						$('.DEBU').val('');
-						$('.DATEFIN').val('');
-						$('.HEUREFIN').val('');
-						$('.date_prode').val('');
+						// alertMessage("Erreur!","Date non disponible! Veuillez choisir un autre!","error","btn btn-danger");
+
+						swal("Ooops!!", "Date non disponible! Veuillez choisir un autre!", {
+							icon: 'error',
+							buttons: {
+								confirm: {
+									className: 'btn btn-danger'
+								}
+							},
+						});
+
+
+
+						$('.heureE').val('');
+						$('.hdebE').val('');
+						$('.dateFIn').val('');
+						$('.dateFInE').val('');
+						$('.date_prodEE').val('');
 
 					} else if (data.message == "init") {
-						$(".editData").modal("hide");
+						$('#jobMachine').modal("hide");
 						swal({
 							title: 'DUREE',
 							html: '',
@@ -509,14 +368,15 @@ $('.date_prodEE').on('change',function(event){
 								$.post(base_url + 'Planning/tempsDeProduction', {
 									processus: processus,
 									date: date,
+									poids: poids,
 									machine: machine,
 									heure: hdeb
 								}, function(data) {
-									$('.DURE').val(data.dure);
-									$('.DEBU').val($('#input-field').val());
-									$('.DATEFIN').val(data.dateFIn);
-									$('.HEUREFIN').val(data.heurefin);
-									$(".editData").modal("show");
+									$('.heureE').val(data.dure);
+									$('.hdebE').val($('#input-field').val());
+									$('.dateFInE').val(data.dateFIn);
+									$('.heurefinE').val(data.heurefin);
+									$('#jobMachine').modal("show");
 								}, 'json');
 
 							}
@@ -524,15 +384,197 @@ $('.date_prodEE').on('change',function(event){
 
 					} else {
 						alertMessage("Ooops!!", data.observation, 'error', 'btn btn-danger');
-						$('.DURE').val('');
-						$('.DEBU').val('');
-						$('.DATEFIN').val('');
-						$('.HEUREFIN').val('');
-						$('.date_prode').val('');
+						$('.heureE').val('');
+						$('.hdebE').val('');
+						$('.dateFInE').val('');
+						$('.heurefinE').val('');
+						$('.date_prodEE').val('');
 					}
 
 				}, 'json');
-			
+			} else {
+
+				swal("Ooops!!", "Champs 'POIDS EN KG AVEC MARGE' est obligatoire", {
+					icon: 'error',
+					buttons: {
+						confirm: {
+							className: 'btn btn-danger'
+						}
+					},
+				});
+				// alertMessage("Ooops!!","Champs 'POIDS EN KG AVEC MARGE' est obligatoire",'error','btn btn-danger');
+			}
+
+		});
+
+
+		$('.UpdateCommandeE').on('click', function(event) {
+			var heure = $('.heureE').val();
+			var hdeb = $('.hdebE').val();
+			var dateFIn = $('.dateFInE').val();
+			var heurefin = $('.heurefinE').val();
+			var date_prod = $('.date_prodEE').val();
+			var BC_PE = $('.BC_PEE ').val();
+			var BC_STATUT = $('.BC_STATUTE option:selected').val();
+			var JO_MACHINE = $('.DJ_MACHINEE option:selected').val();
+			var JO_DATE = $('.date_prodEE').val();
+			var JO_ID = $('.JO_IDE').val();
+			var JO_SORTIE = $('.ENPRODUCTIONE').val();
+
+			$.post(base_url + 'Planning/insertJobCart', {
+				JO_SORTIE: JO_SORTIE,
+				date_prod: date_prod,
+				dateFIn: dateFIn,
+				heurefin: heurefin,
+				BC_PE: BC_PE.trim(),
+				JO_DATE: JO_DATE,
+				JO_MACHINE: JO_MACHINE,
+				BC_STATUT: BC_STATUT,
+				JO_ID: JO_ID,
+				heure: heure,
+				hdeb: hdeb
+			}, function(data) {
+				$('.heureE').val('');
+				$('.hdebE').val('');
+				$('.dateFInE').val('');
+				$('.heurefinE').val('');
+				$('.date_prodEE').val('');
+				$('.BC_PEE ').val('');
+				$("#jobMachine").modal("hide");
+				$('.BC_QUANTITEAPRODUIREENMETRE').val();
+				swal("Succé", "Job carte enregistre avec success!", {
+					icon: "success",
+					buttons: {
+						confirm: {
+							className: "btn btn-success"
+						}
+					},
+				});
+				closeDialog();
+			}, 'json');
+		});
+
+
+		$.post(base_url + 'Planning/machineModaleTable', {
+			type: "COUPE_EXTRUSION"
+		}, function(data) {
+			$('.DJ_MACHINE').empty();
+			data.forEach(element => $('.DJ_MACHINE').append("<option>" + element + "</option>"));
+		}, 'json');
+
+		var Table = $(".dataTable").dataTable({
+			language: {
+				url: base_url + "assets/dataTableFr/french.json"
+			},
+		});
+
+		$('.editProcessus').on('click', function(event) {
+			event.preventDefault();
+			var BC_PE = $(this).parent().parent().children().eq(1).text().trim();
+			var JO_ID = $(this).parent().parent().children().eq(2).text().trim();
+			var poids = $(this).parent().parent().children().eq(11).text().trim();
+
+			$('.BC_PE').val(BC_PE);
+			$('.JO_ID').val(JO_ID);
+			$('.date_prod').attr('id', poids);
+			$(".editData").modal("show");
+		});
+
+		$('.editP').on('click', function(event) {
+			event.preventDefault();
+			var BC_PE = $(this).parent().parent().children().eq(1).text().trim();
+			var jobs = $(this).parent().parent().children().eq(2).text().trim();
+
+			var type = "IMPRESSION_EXTRUSION";
+			$.post(base_url + "Planning/editPoExtrusion", {
+				BC_PE: BC_PE,
+				jobs: jobs,
+				type: type
+			}, function(data) {
+				$('.containt-result').empty().append(data);
+			});
+
+		});
+
+		$('.date_prod').on('change', function(event) {
+			event.preventDefault();
+			var date = $(this).val();
+			var processus = $('.BC_STATUT option:selected').val();
+			var machine = $('.DJ_MACHINE option:selected').val();
+			var poids = $(this).attr('id');
+			$.post(base_url + 'Planning/calculePlanning', {
+				date: date,
+				poids: poids,
+				machine: machine,
+				BC_STATUT: processus
+			}, function(data) {
+				if (data.message == "true") {
+
+					$('.DURE').val(data.dure);
+					$('.DEBU').val(data.hdeb);
+					$('.DATEFIN').val(data.dateFIn);
+					$('.HEUREFIN').val(data.heurefin);
+					$(".editData").modal("show");
+				} else if (data.message == "over") {
+					alertMessage("Erreur!", "Date non disponible! Veuillez choisir une autre!", "error", "btn btn-danger");
+					$('.DURE').val('');
+					$('.DEBU').val('');
+					$('.DATEFIN').val('');
+					$('.HEUREFIN').val('');
+					$('.date_prode').val('');
+
+				} else if (data.message == "init") {
+					$(".editData").modal("hide");
+					swal({
+						title: 'DUREE',
+						html: '',
+						content: {
+							element: "input",
+							attributes: {
+								type: "time",
+								id: "input-field",
+								className: "form-control"
+							},
+						},
+						buttons: {
+							cancel: {
+								visible: true,
+								className: 'btn btn-danger'
+							},
+							confirm: {
+								className: 'btn btn-success'
+							}
+						},
+					}).then(
+						function() {
+							var hdeb = $('#input-field').val();
+							$.post(base_url + 'Planning/tempsDeProduction', {
+								processus: processus,
+								date: date,
+								machine: machine,
+								heure: hdeb
+							}, function(data) {
+								$('.DURE').val(data.dure);
+								$('.DEBU').val($('#input-field').val());
+								$('.DATEFIN').val(data.dateFIn);
+								$('.HEUREFIN').val(data.heurefin);
+								$(".editData").modal("show");
+							}, 'json');
+
+						}
+					);
+
+				} else {
+					alertMessage("Ooops!!", data.observation, 'error', 'btn btn-danger');
+					$('.DURE').val('');
+					$('.DEBU').val('');
+					$('.DATEFIN').val('');
+					$('.HEUREFIN').val('');
+					$('.date_prode').val('');
+				}
+
+			}, 'json');
+
 		});
 
 		$('.date_prodE').on('change', function(event) {
@@ -546,7 +588,7 @@ $('.date_prodEE').on('change',function(event){
 					poids: poids,
 					date: date,
 					machine: machine,
-					BC_STATUT:processus
+					BC_STATUT: processus
 				}, function(data) {
 					if (data.message == "true") {
 						$('.heuree').val(data.dure);
@@ -760,8 +802,6 @@ $('.date_prodEE').on('change',function(event){
 
 		}
 
-	
-    });
 
+	});
 </script>
-
