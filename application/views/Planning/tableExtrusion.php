@@ -41,8 +41,6 @@
 		<div class="col-md-12">
 			<div class="d-flex justify-content-between">
 				<p>
-
-
 				</p>
 			</div>
 			<fieldset class="border p-2 bg-white mb-2 text-right">
