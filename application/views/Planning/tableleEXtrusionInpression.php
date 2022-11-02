@@ -693,7 +693,6 @@
 				}
 			});
 
-
 		});
 
 		$('.BC_STATUT').on('change', function() {
