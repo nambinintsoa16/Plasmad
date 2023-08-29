@@ -88,6 +88,8 @@ class wip extends My_Controller
 		$quantite = $this->input->post("quantite");
 		$obs = $this->input->post("obs");
 		$BL = $this->input->post("BL");
+		$machine = $this->input->post("machine");
+		$operateur = $this->input->post("operateur");
 
 		$reponse = $this->wip_stock_gaines_plasmad_imprimer->get_detail_wip_stock_gaines_imprimer_plasmad(["BC_ID"=>$refnum]);
 		$methodOk = $reponse !=null;
@@ -103,7 +105,9 @@ class wip extends My_Controller
 					"SF_QUANTITE"=>$quantite, 
 					"STF_OBSE"=>$obs, 
 					"SF_DIM"=>$dim, 
-					"SF_CLIENT"=>$client
+					"SF_CLIENT"=>$client, 
+					"SF_OPERATEUR"=>$operateur, 
+					"SF_MACHINE"=>$machine
 				];
 				echo $this->wip_sortie_gaines_imprimer->insert_data_wip_sortie_gaines_imprimer($data_sortie);
 			}
@@ -163,6 +167,19 @@ class wip extends My_Controller
     echo json_encode($reponse);
   }
 
+
+  public function autocomplet_stock_wipe_gane_imprimer()
+  {
+	$this->load->model('wip_stock_gaines_plasmad_imprimer');
+    $mot = $this->input->get('term');
+    $data = $this->wip_stock_gaines_plasmad_imprimer->get_wip_stock_gaines_imprimer_plasmad("BC_ID like '%$mot%' LIMIT 10");
+    $reponse = array();
+    foreach ($data as $key => $data) {
+      $reponse[] = $data->BC_ID;
+    }
+    echo json_encode($reponse);
+  }
+
   public function detail_wipe_gaines_stock(){
 	$this->load->model('global');
 	$refnum_pe = $this->input->post("refnum_pe");
@@ -174,6 +191,26 @@ class wip extends My_Controller
 		$resultat['dim']=$reponse->BC_DIMENSION;
 		$resultat['code']=$reponse->BC_CODE;
 		$stock  = $this->wip_stock_gaines_plasmad->get_detail_wip_stock_gaines_plasmad(["BC_ID"=>$refnum_pe]);
+		$resultat['stock']=$stock->STF_QUANTITE;
+		//$resultat['tail']= $this->global->get_distinct_colum(["BC_ID"=>$reponse->BC_PE],"STF_TAIL AS 'tail'","stock_gaines_plasmad"); 
+		
+	}
+	echo json_encode($resultat);
+}
+
+
+public function detail_wipe_gaines_imprimer_stock(){
+	$this->load->model('global');
+	$this->load->model('wip_stock_gaines_plasmad_imprimer');
+	$refnum_pe = $this->input->post("refnum_pe");
+	$reponse =$this->commande->select_commande(["BC_PE"=>$refnum_pe]); 
+	$methodOk = $reponse != null;
+	$resultat = ['message'=>false];
+	if($methodOk){
+		$resultat['client']=$reponse->BC_CLIENT;
+		$resultat['dim']=$reponse->BC_DIMENSION;
+		$resultat['code']=$reponse->BC_CODE;
+		$stock  = $this->wip_stock_gaines_plasmad_imprimer->get_detail_wip_stock_gaines_imprimer_plasmad(["BC_ID"=>$refnum_pe]);
 		$resultat['stock']=$stock->STF_QUANTITE;
 		//$resultat['tail']= $this->global->get_distinct_colum(["BC_ID"=>$reponse->BC_PE],"STF_TAIL AS 'tail'","stock_gaines_plasmad"); 
 		
