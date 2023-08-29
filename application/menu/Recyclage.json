@@ -1,0 +1,35 @@
+{
+    "couleur_base": "#31ce36",
+    "couleur_nav": "success",
+    "title": "RECYCLAGE",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Recyclage"
+        }, {
+            "text": "Enregistrer",
+            "icon": "icon-note",
+            "link": "Recyclage/Enregistrer"
+        },
+        {
+            "text": "Entree",
+            "icon": "icon-action-undo",
+            "link": "Recyclage/Entree"
+        }, {
+            "text": "Liste des entrees",
+            "icon": "icon-docs",
+            "link": "Recyclage/Liste_des_entrees"
+        },
+        {
+            "text": "Sortie",
+            "icon": "icon-action-redo",
+            "link": "Recyclage/Sortie"
+        },
+        {
+            "text": "Liste des sorties",
+            "icon": "icon-docs",
+            "link": "Recyclage/Liste_des_sorties"
+        }
+
+    ]
+}

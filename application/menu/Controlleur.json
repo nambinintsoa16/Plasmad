@@ -1,0 +1,304 @@
+{
+    "couleur_base": "#f25961 ",
+    "couleur_nav": "danger",
+    "title": "SURPLUS",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Commercial"
+        },
+        {
+            "text": "Utilisateur",
+            "icon": "flaticon-user-5",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouvelle utilisateur",
+                    "icon": "",
+                    "link": "Controlleur/Utilisateur/Nouvelle_utilisateur"
+                },
+                {
+                    "text": "Liste des utilisateurs",
+                    "icon": "",
+                    "link": "Controlleur/Utilisateur/Liste_des_utilisateurs"
+                }
+            ]
+        }, {
+            "text": "Operateur",
+            "icon": "icon-user",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouvelle operateur",
+                    "icon": "",
+                    "link": "Controlleur/Operateur/Nouvelle_operateur"
+                },
+                {
+                    "text": "Liste des operateurs",
+                    "icon": "",
+                    "link": "Controlleur/Operateur/Liste_des_operateurs"
+                }
+            ]
+        },
+        {
+            "text": "Suivi machine",
+            "icon": "icon-wrench",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouvelle machine",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_machine/Nouvelle_machine"
+                }, {
+                    "text": "Liste des machines",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_machine/Liste_des_machines"
+                }, {
+                    "text": "Extrusion",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_machine/Extrusion"
+                },
+                {
+                    "text": "Impression",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_machine/Impression"
+                },
+                {
+                    "text": "Coupe",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_machine/Coupe"
+                }
+            ]
+        },
+        {
+            "text": "Suivi production",
+            "icon": "icon-settings",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Sachet extrusion",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_production/Sachet_extrusion"
+                },
+                {
+                    "text": "Sachet impression",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_production/Sachet_impression"
+                },
+                {
+                    "text": "Sachet coupe",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_production/Sachet_coupe"
+                },
+                {
+                    "text": "Daily production follow up",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_production/Daily_production_follow_up"
+                },
+                {
+                    "text": "Statu commande",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_production/Statu_commande"
+                },
+                {
+                    "text": "Encres et solvants",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_production/Encres_et_solvants"
+                }
+            ]
+        }, {
+            "text": "Planning",
+            "icon": "flaticon-calendar",
+            "link": "Controlleur/Planning"
+
+        }, {
+            "text": "Initialiser refnum",
+            "icon": "flaticon-repeat",
+            "link": "Controlleur/Initialiser_refnum"
+        }, {
+            "text": "Suivi matiere",
+            "icon": "icon-layers",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Valider sortie matiere",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Valider_sortie_matiere"
+                }, {
+                    "text": "Entree matiere",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Entree_matiere"
+                },
+                {
+                    "text": "Echange",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Echange"
+                },{
+                    "text": "Init stock matieres premieres",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Init_stock_matieres_premieres"
+                },
+                {
+                    "text": "Liste des matieres premieres",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Liste_des_matieres_premieres"
+                },
+                {
+                    "text": "Liste des entrees matieres",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Liste_des_entrees_matieres"
+                }, {
+                    "text": "Supprimer entree matiere",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Supprimer_entree_matiere"
+                },
+                {
+                    "text": "Supprimer sortie matiere",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Supprimer_sortie_matiere"
+                }, {
+                    "text": "Liste des sorties matieres",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Liste_des_sorties_matieres"
+                }, {
+                    "text": "Recap matiere",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Recap_matiere"
+                }, {
+                    "text": "Recap sortie matiere",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_matiere/Recap_sortie_matiere"
+                }
+            ]
+        }, {
+            "text": "Costing",
+            "icon": "icon-wallet",
+            "link": "Controlleur/Costing"
+        }, {
+            "text": "Recap costing",
+            "icon": "icon-pie-chart",
+            "link": "Controlleur/Recap_costing"
+        }, {
+            "text": "Suivi surplus",
+            "icon": "flaticon-box-3",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock surplus",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_surplus/Stock_surplus"
+                },
+                {
+                    "text": "Liste des entrees surplus",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_surplus/Liste_des_entrees_surplus"
+                },
+                {
+                    "text": "Liste des sorties surplus",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_surplus/Liste_des_sorties_surplus"
+                }
+            ]
+        }, {
+            "text": "Recycle",
+            "icon": "icon-social-dropbox",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock",
+                    "icon": "icon-note",
+                    "link": "Controlleur/Recycle/Stock"
+                },
+                {
+                    "text": "Liste des entrees",
+                    "icon": "icon-docs",
+                    "link": "Controlleur/Recycle/Liste_des_entrees"
+                },
+                {
+                    "text": "Liste des sorties",
+                    "icon": "icon-docs",
+                    "link": "Controlleur/Recycle/Liste_des_sorties"
+                }
+            ]
+        }, {
+            "text": "Suivi commande",
+            "icon": "flaticon-medical",
+            "link": "Controlleur/suivi_commande"
+        }, {
+            "text": "Rapport de commande",
+            "icon": "flaticon-medical",
+            "link": "Controlleur/Rapport_de_commande"
+        }, {
+            "text": "Suivi produit fini",
+            "icon": "flaticon-box",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Entree",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_produit_fini/Entree"
+                }, {
+                    "text": "Liste des produits finis",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_produit_fini/Liste_des_produits_finis"
+                },
+                {
+                    "text": "Liste des entree",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_produit_fini/Liste_des_entree"
+                },
+                {
+                    "text": "Liste des sortie",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_produit_fini/Liste_des_sortie"
+                },
+                {
+                    "text": "Supprimer transaction",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_produit_fini/Supprimer_transaction"
+                }, {
+                    "text": "Init stock produit fini",
+                    "icon": "",
+                    "link": "Controlleur/Suivi_produit_fini/Init_stock_produit_fini"
+                }
+            ]
+        }, {
+            "text": "Controlle qualite",
+            "icon": "flaticon-search-1",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock deuxieme choix",
+                    "icon": "flaticon-web",
+                    "link": "Controlleur/Control_qualite/Stock_deuxieme_choix"
+                },
+                {
+                    "text": "Entree",
+                    "icon": "icon-action-undo",
+                    "link": "Controlleur/Control_qualite/Entree"
+                },
+                {
+                    "text": "Liste des entrees",
+                    "icon": "icon-docs",
+                    "link": "Controlleur/Control_qualite/Liste_des_entrees"
+                },
+                {
+                    "text": "Sortie",
+                    "icon": "icon-action-redo",
+                    "link": "Controlleur/Control_qualite/Sortie"
+                },
+                {
+                    "text": "Liste des sorties",
+                    "icon": "icon-docs",
+                    "link": "Controlleur/Control_qualite/Liste_des_sorties"
+                }
+            ]
+        }, {
+            "text": "Prix appliquer",
+            "icon": "flaticon-coins",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Nouveau",
+                    "icon": "icon-note",
+                    "link": "Controlleur/Prix_appliquer/Nouveau"
+                },
+                {
+                    "text": "Liste des prix",
+                    "icon": "icon-docs",
+                    "link": "Controlleur/Prix_appliquer/Liste_des_prix"
+                }
+            ]
+        }
+    ]
+}

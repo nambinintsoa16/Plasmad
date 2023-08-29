@@ -1,0 +1,63 @@
+{
+    "couleur_base": "#6861ce ",
+    "couleur_nav": "secondary",
+    "title": "SURPLUS",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Commercial"
+        },
+        {
+            "text": "Stock",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock surplus",
+                    "icon": "",
+                    "link": "Surplus/Stock/Stock_surplus"
+                },
+                {
+                    "text": "Entree",
+                    "icon": "",
+                    "link": "Surplus/Stock/Entree"
+                },
+                {
+                    "text": "Liste des entrees",
+                    "icon": "",
+                    "link": "Surplus/Stock/Liste_des_entrees"
+                },
+                {
+                    "text": "Sortie",
+                    "icon": "",
+                    "link": "Surplus/Stock/Sortie"
+                },
+                {
+                    "text": "Sortie gaines",
+                    "icon": "",
+                    "link": "Surplus/Stock/Sortie_gaines"
+                },
+                {
+                    "text": "Liste des sorties",
+                    "icon": "",
+                    "link": "Surplus/Stock/Liste_des_sorties"
+                }
+            ]
+        },
+        {
+            "text": "Quality controls",
+            "icon": "flaticon-medical",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Entree",
+                    "icon": "",
+                    "link": "Surplus/Quality_controls/entree"
+                },
+                {
+                    "text": "Liste des entrees",
+                    "icon": "",
+                    "link": "Surplus/Quality_controls/Liste_des_entrees"
+                }
+            ]
+        }
+    ]
+}

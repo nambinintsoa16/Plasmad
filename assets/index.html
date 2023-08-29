@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../plug_in/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plug_in/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../plug_in/jquery-ui-1.13.2/jquery-ui.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="myTable" class="table table-hover table-border">
+        <thead>
+            <tr>
+                <th>First</th>
+                <th>Second</th>
+                <th>Second</th>
+                <th>Second</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="../plug_in/jquery-3.6.3.min.js"></script>
+    <script src="../plug_in/jquery-ui-1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+    <script src="../plug_in/js/bootstrap.min.js"></script>
+
+    <script>
+
+        var data = [
+            [
+                "12",
+                "Rhona Davidson_1",
+                "Jena Gaines",
+                "Rhona Davidson"
+
+
+            ],
+            [
+                "21",
+                "Colleen Hurst_2",
+                "Jena Gaines",
+                "Rhona Davidson"
+
+            ],
+            [
+                "35",
+                "Sonya Frost_3",
+                "Rhona Davidson",
+                "Jena Gaines"
+            ],
+            [
+                "48",
+                "Jena Gaines_4",
+                "Rhona Davidson",
+                "Sonya Frost"
+            ],
+        ]
+        var dataTable = $('#myTable').DataTable({
+            createdRow: function (row, data, dataIndex) {
+                console.log(data);
+                $(row).attr('id', 'row-' + data[0]);
+            },
+            rowReorder: {
+                dataSrc: 'question_order',
+                selector: 'tr'
+            }, data: data
+
+        });
+        dataTable.on('row-reorder', function (e, diff, edit) {
+            for (var i = 0, ien = diff.length; i < ien; i++) {
+                // get id row 
+
+                let idQ = diff[i].node.id;
+                let idNewQ = idQ.replace("row_", "");     // get position
+                let position = diff[i].newPosition + 1;     //call funnction to update data
+                updateOrder(idNewQ, position);
+            }
+        });
+
+        var url = "https://domain.com"
+        function updateOrder(idQuestion, order) {
+            console.log(idQuestion + " " + order);
+        }
+    </script>
+</body>
+
+</html>

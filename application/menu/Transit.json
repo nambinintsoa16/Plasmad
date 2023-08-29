@@ -1,0 +1,16 @@
+{
+    "couleur_base": "#31ce36",
+    "couleur_nav": "success",
+    "title": "TRANSIT",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Recyclage"
+        }, {
+            "text": "Recap sortie matiere",
+            "icon": "icon-note",
+            "link": "Transit/Suivi_matiere/Recap_sortie_matiere"
+        }
+
+    ]
+}

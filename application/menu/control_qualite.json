@@ -1,0 +1,37 @@
+{
+    "couleur_base": "#6861ce ",
+    "couleur_nav": "secondary",
+    "title": "CONTROL QUALITE",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Control_qualite"
+        },
+        {
+            "text": "Stock deuxieme choix",
+            "icon": "flaticon-web",
+            "link": "Control_qualite/Stock_deuxieme_choix"
+        },
+
+        {
+            "text": "Entree",
+            "icon": "icon-action-undo",
+            "link": "Control_qualite/Entree"
+        },
+        {
+            "text": "Liste des entrees",
+            "icon": "icon-docs",
+            "link": "Control_qualite/Liste_des_entrees"
+        },
+        {
+            "text": "Sortie",
+            "icon": "icon-action-redo",
+            "link": "Control_qualite/Sortie"
+        },
+        {
+            "text": "Liste des sorties",
+            "icon": "icon-docs",
+            "link": "Control_qualite/Liste_des_sorties"
+        }
+    ]
+}

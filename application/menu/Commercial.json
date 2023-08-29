@@ -1,0 +1,73 @@
+{
+    "couleur_base": "light-blue2",
+    "couleur_nav": "info",
+    "title": "COMMERCIAL",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Commercial"
+        },
+        {
+            "text": "Bon de commande",
+            "icon": "flaticon-pen",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Sachets",
+                    "icon": "",
+                    "link": "Commercial/Bon_de_commande/sachets"
+                },
+                {
+                    "text": "Cintres",
+                    "icon": "",
+                    "link": "Commercial/Bon_de_commande/Cintres"
+                },
+                {
+                    "text": "Liste commande sachets",
+                    "icon": "",
+                    "link": "Commercial/Bon_de_commande/Liste_commande_sachets"
+                },
+                {
+                    "text": "Liste commande cintre",
+                    "icon": "",
+                    "link": "Commercial/Bon_de_commande/Liste_commande_cintre"
+                }
+            ]
+        },
+        {
+            "text": "Pre costing",
+            "icon": "flaticon-coins",
+            "link": "Commercial/Pre_costing"
+        },
+        {
+            "text": "Suivie commande",
+            "icon": "flaticon-message",
+            "link": "Commercial/Suivie_commande"
+        },
+        {
+            "text": "Calendrier de livraison",
+            "icon": "flaticon-calendar",
+            "link": "Commercial/Calendrier_de_livraison"
+        },
+        {
+            "text": "Stock",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock Produit fini",
+                    "icon": "",
+                    "link": "Commercial/Stock/Stock_Produit_fini"
+                },
+                {
+                    "text": "Stock surplus",
+                    "icon": "",
+                    "link": "Commercial/Stock/Stock_surplus"
+                },
+                {
+                    "text": "Stock matiere premiere",
+                    "icon": "",
+                    "link": "Commercial/Stock/Stock_matiere_premiere"
+                }
+            ]
+        }
+    ]
+}

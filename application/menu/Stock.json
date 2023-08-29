@@ -1,0 +1,91 @@
+{
+    "couleur_base": "#6861ce",
+    "couleur_nav": "secondary",
+    "title": "STOCK",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": ""
+        },
+        {
+            "text": "Matiere premiere",
+            "icon": "flaticon-web",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Sortie matiere",
+                    "icon": "",
+                    "link": "Stock/Matiere_premiere/Sortie_matiere"
+                }, {
+                    "text": "Liste des matieres premieres",
+                    "icon": "",
+                    "link": "Stock/Matiere_premiere/Liste_des_matieres_premieres"
+                },
+                {
+                    "text": "Entree matiere",
+                    "icon": "",
+                    "link": "Stock/Matiere_premiere/Entree_matiere"
+                },
+                {
+                    "text": "Liste des entrees matieres",
+                    "icon": "",
+                    "link": "Stock/Matiere_premiere/Liste_des_entrees_matieres"
+                },
+                {
+                    "text": "Liste des sorties matieres",
+                    "icon": "",
+                    "link": "Stock/Matiere_premiere/Liste_des_sorties_matieres"
+                }
+            ]
+        },
+
+        {
+            "text": "Produit fini",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Entree",
+                    "icon": "",
+                    "link": "Stock/Produit_fini/Entree"
+                },{
+                    "text": "Entree gaines",
+                    "icon": "icon-action-undo",
+                    "link": "Stock/Produit_fini/Entree_gaines"
+                    
+                },
+
+                {
+                    "text": "Liste des produits finis",
+                    "icon": "",
+                    "link": "Stock/Produit_fini/Liste_des_produits_finis"
+                },
+                {
+                    "text": "Liste des entree",
+                    "icon": "",
+                    "link": "Stock/Produit_fini/Liste_des_entree"
+                },
+                {
+                    "text": "Liste des sortie",
+                    "icon": "",
+                    "link": "Stock/Produit_fini/Liste_des_sortie"
+                }
+            ]
+        },
+        {
+            "text": "Livraison",
+            "icon": "flaticon-delivery-truck",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Entree livraison",
+                    "icon": "",
+                    "link": "Stock/Livraison/Entree_livraison"
+                },
+                {
+                    "text": "Historique de livraison",
+                    "icon": "",
+                    "link": "Stock/Livraison/Historique_de_livraison"
+                }
+            ]
+        }
+
+    ]
+}

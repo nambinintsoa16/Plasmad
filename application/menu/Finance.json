@@ -1,0 +1,58 @@
+{
+    "couleur_base": "#f25961 ",
+    "couleur_nav": "danger",
+    "title": "COMPTABILITE",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Finance"
+        },
+        {
+            "text": "Production",
+            "icon": "flaticon-repeat",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Sachet extrusion",
+                    "icon": "",
+                    "link": "Finance/Production/Sachet_extrusion"
+                },
+                {
+                    "text": "Sachet impression",
+                    "icon": "",
+                    "link": "Finance/Production/Sachet_impression"
+                },
+                {
+                    "text": "Sachet coupe",
+                    "icon": "",
+                    "link": "Finance/Production/Sachet_coupe"
+                }
+            ]
+        },
+        {
+            "text": "Matieres premieres",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Liste des matieres premieres",
+                    "icon": "",
+                    "link": "Finance/Suivi_matiere/Liste_des_matieres_premieres"
+                },
+                {
+                    "text": "Liste des entrees matieres",
+                    "icon": "",
+                    "link": "Finance/Suivi_matiere/Liste_des_entrees_matieres"
+                },
+                {
+                    "text": "Liste des sorties matieres",
+                    "icon": "",
+                    "link": "Finance/Suivi_matiere/Liste_des_sorties_matieres"
+                }
+            ]
+        },
+        {
+            "text": "Costing",
+            "icon": "flaticon-coins",
+            "link": "Finance/Costing"
+        }
+    ]
+}

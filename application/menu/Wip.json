@@ -1,0 +1,72 @@
+{
+    "couleur_base": "#6861ce",
+    "couleur_nav": "secondary",
+    "title": "COMPTABILITE",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Finance"
+        },
+        {
+            "text": "Gaine plaine",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Entree",
+                    "icon": "",
+                    "link": "wip/gaine_plaine/Entree"
+                },   {
+                    "text": "Liste des entrees",
+                    "icon": "icon-docs",
+                    "link": "wip/gaine_plaine/Liste_des_entrees"
+                },
+                {
+                    "text": "Sortie",
+                    "icon": "",
+                    "link": "wip/gaine_plaine/Sortie"
+                },
+                {
+                    "text": "Liste des sorties",
+                    "icon": "icon-docs",
+                    "link": "wip/gaine_plaine/Liste_des_sorties"
+                },
+                {
+                    "text": "Stock",
+                    "icon": "",
+                    "link":  "wip/gaine_plaine/Stock"
+                }
+            ]
+        },
+        {
+            "text": "Gaine imprimer",
+            "icon": "flaticon-technology-1",
+            "link": "",
+            "sous_menu": [{
+                    "text": "GI_entree",
+                    "icon": "",
+                    "link": "wip/gaine_imprimer/GI_entree"
+                },{
+                    "text": "GI liste des entrees",
+                    "icon": "icon-docs",
+                    "link": "wip/gaine_imprimer/GI_liste_des_entrees"
+                },
+                {
+                    "text": "GI_sortie",
+                    "icon": "",
+                    "link": "wip/gaine_imprimer/GI_sortie"
+                },{
+                    "text": "GI liste des sortie",
+                    "icon": "icon-docs",
+                    "link": "wip/gaine_imprimer/GI_liste_des_sorties"
+                },
+                {
+                    "text": "GI_stock",
+                    "icon": "",
+                    "link":  "wip/gaine_imprimer/GI_stock"
+                }
+            ]
+        }
+    ]
+}
+
+

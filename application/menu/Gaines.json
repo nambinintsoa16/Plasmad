@@ -1,0 +1,42 @@
+{
+    "couleur_base": "#6861ce ",
+    "couleur_nav": "secondary",
+    "title": "GAINES",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Gaines"
+        },
+        {
+            "text": "Stock gaine",
+            "icon": "flaticon-web",
+            "link": "Gaines/Stock_gaine"
+        },
+
+        {
+            "text": "Entree",
+            "icon": "icon-action-undo",
+            "link": "Gaines/Entree"
+        },
+        {
+            "text": "Liste des entrees",
+            "icon": "icon-docs",
+            "link": "Gaines/Liste_des_entrees"
+        },
+        {
+            "text": "Livraison",
+            "icon": "flaticon-delivery-truck",
+            "link": "Gaines/Livraison"
+        },
+        {
+            "text": "Sortie",
+            "icon": "icon-action-redo",
+            "link": "Gaines/Sortie"
+        },
+        {
+            "text": "Liste des sorties",
+            "icon": "icon-docs",
+            "link": "Gaines/Liste_des_sorties"
+        }
+    ]
+}

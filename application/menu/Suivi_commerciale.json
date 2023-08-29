@@ -1,0 +1,47 @@
+{
+    "couleur_base": "light-blue2",
+    "couleur_nav": "info",
+    "title": "SUIVI COMMERCIAL",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Suivi_commerciale"
+        },
+        {
+            "text": "Bon de commande",
+            "icon": "flaticon-pen",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Liste commande sachets",
+                    "icon": "",
+                    "link": "Suivi_commerciale/Bon_de_commande/Liste_commande_sachets"
+                },
+                {
+                    "text": "Liste commande cintre",
+                    "icon": "",
+                    "link": "Suivi_commerciale/Bon_de_commande/Liste_commande_cintre"
+                }
+            ]
+        },
+        {
+            "text": "Costing",
+            "icon": "flaticon-coins",
+            "link": "Suivi_commerciale/Costing"
+        },
+        {
+            "text": "Pre costing",
+            "icon": "flaticon-coins",
+            "link": "Suivi_commerciale/Pre_costing"
+        },
+        {
+            "text": "Suivie commande",
+            "icon": "flaticon-message",
+            "link": "Suivi_commerciale/Suivie_commande"
+        },
+        {
+            "text": "Calendrier de livraison",
+            "icon": "flaticon-calendar",
+            "link": "Suivi_commerciale/Calendrier_de_livraison"
+        }
+    ]
+}

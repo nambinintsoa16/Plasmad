@@ -1,0 +1,117 @@
+{
+    "couleur_base": "light-blue2",
+    "couleur_nav": "info",
+    "title": "PLANNING",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "Planning"
+        }, {
+            "text": "Non planifier",
+            "icon": "flaticon-agenda-1",
+            "link": "planning/Non_planifier"
+        }, {
+            "text": "Commande terminer",
+            "icon": "icon-wrench",
+            "link": "planning/Commande_terminer"
+        },
+        {
+            "text": "Job card",
+            "icon": "flaticon-clock-1",
+            "link": "",
+            "sous_menu": [
+
+                {
+                    "text": "Sachet extrusion",
+                    "icon": "",
+                    "link": "Planning/Job_card/Sachet_extrusion"
+                },
+                {
+                    "text": "Sachet impression",
+                    "icon": "",
+                    "link": "Planning/Job_card/Sachet_impression"
+                },
+                {
+                    "text": "Sachet coupe",
+                    "icon": "",
+                    "link": "Planning/Job_card/Sachet_coupe"
+                }
+            ]
+        }, {
+            "text": "Reextrusion",
+            "icon": "flaticon-repeat",
+            "link": "planning/Reextrusion"
+        }, {
+            "text": "Liste reextrusion",
+            "icon": "flaticon-chain",
+            "link": "planning/Liste_reextrusion"
+        }, {
+            "text": "Commande",
+            "icon": "flaticon-message",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Sachet",
+                    "icon": "",
+                    "link": "Planning/Commande/Sachet"
+                },
+                {
+                    "text": "Cintre",
+                    "icon": "",
+                    "link": "Planning/Commande/Cintre"
+                }
+            ]
+        },
+        {
+            "text": "Reconciliation",
+            "icon": "flaticon-presentation",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Recap machine",
+                    "icon": "",
+                    "link": "Planning/Reconciliation/Recap_machine"
+                },
+                {
+                    "text": "Suivi progression",
+                    "icon": "",
+                    "link": "Planning/Reconciliation/Suivi_progression"
+                },
+                {
+                    "text": "Calendrier de livraison",
+                    "icon": "",
+                    "link": "Planning/Reconciliation/Calendrier_de_livraison"
+                },
+                {
+                    "text": "Historique de livraison",
+                    "icon": "",
+                    "link": "Planning/Reconciliation/Historique_de_livraison"
+                }
+            ]
+        },
+        {
+            "text": "Stock",
+            "icon": "flaticon-box-1",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock Produit fini",
+                    "icon": "",
+                    "link": "Planning/Stock/Stock_Produit_fini"
+                },
+                {
+                    "text": "Stock surplus",
+                    "icon": "",
+                    "link": "Planning/Stock/Stock_surplus"
+                },
+                {
+                    "text": "Stock matiere premiere",
+                    "icon": "",
+                    "link": "Planning/Stock/Stock_matiere_premiere"
+                },
+                {
+                    "text": "Stock deuxieme choix",
+                    "icon": "",
+                    "link": "Planning/Stock/Stock_dexieme_choix"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "couleur_base": "#f25961 ",
+    "couleur_nav": "danger",
+    "title": "COMPTABILITE",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": "comptabilite"
+        },
+        {
+            "text": "Matieres premieres",
+            "icon": "flaticon-database",
+            "link": "Comptabilite/",
+            "sous_menu": [{
+                    "text": "Stock",
+                    "icon": "",
+                    "link": "Comptabilite/Matieres_premieres/Stock"
+                },
+                {
+                    "text": "Entree",
+                    "icon": "",
+                    "link": "Comptabilite/Matieres_premieres/Entree"
+                },
+                {
+                    "text": "Liste des entrees",
+                    "icon": "",
+                    "link": "Comptabilite/Matieres_premieres/Liste_des_entrees"
+                },
+                {
+                    "text": "Liste des sortiee",
+                    "icon": "",
+                    "link": "Comptabilite/Matieres_premieres/Liste_des_sortiee"
+                },
+                {
+                    "text": "Echange",
+                    "icon": "",
+                    "link": "Comptabilite/Matieres_premieres/Echange"
+                }
+            ]
+        },
+        {
+            "text": "Costing",
+            "icon": "flaticon-coins",
+            "link": "Comptabilite/Costing"
+        },
+        {
+            "text": "Recap costing",
+            "icon": "flaticon-message",
+            "link": "Comptabilite/Recap_costing"
+        }
+
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "couleur_base": "#6861ce",
+    "couleur_nav": "secondary",
+    "title": "STOCK",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "link": ""
+        },
+        {
+            "text": "Matiere premiere",
+            "icon": "flaticon-web",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Liste des matieres premieres",
+                    "icon": "",
+                    "link": "Responsables_magasin/Matiere_premiere/Liste_des_matieres_premieres"
+                }, {
+                    "text": "Liste des entrees matieres",
+                    "icon": "",
+                    "link": "Responsables_magasin/Matiere_premiere/Liste_des_entrees_matieres"
+                },
+                {
+                    "text": "Liste des sorties matieres",
+                    "icon": "",
+                    "link": "Responsables_magasin/Matiere_premiere/Liste_des_sorties_matieres"
+                }
+            ]
+        },
+
+        {
+            "text": "Produit fini",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Liste des produits finis",
+                    "icon": "",
+                    "link": "Responsables_magasin/Produit_fini/Liste_des_produits_finis"
+                },
+                {
+                    "text": "Liste des entree",
+                    "icon": "",
+                    "link": "Responsables_magasin/Produit_fini/Liste_des_entree"
+                },
+                {
+                    "text": "Liste des sortie",
+                    "icon": "",
+                    "link": "Responsables_magasin/Produit_fini/Liste_des_sortie"
+                }
+            ]
+        },
+        {
+            "text": "Livraison",
+            "icon": "flaticon-delivery-truck",
+            "link": "",
+            "sous_menu": [{
+                "text": "Historique de livraison",
+                "icon": "",
+                "link": "Responsables_magasin/Livraison/Historique_de_livraison"
+            }]
+        },
+        {
+            "text": "Stock",
+            "icon": "flaticon-database",
+            "link": "",
+            "sous_menu": [{
+                    "text": "Stock surplus",
+                    "icon": "",
+                    "link": "Responsables_magasin/Stock/Stock_surplus"
+                },
+                {
+                    "text": "Liste des entrees",
+                    "icon": "",
+                    "link": "Responsables_magasin/Stock/Liste_des_entrees"
+                },
+                {
+                    "text": "Liste des sorties",
+                    "icon": "",
+                    "link": "Responsables_magasin/Stock/Liste_des_sorties"
+                }
+            ]
+        }
+
+    ]
+}
