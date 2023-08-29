@@ -18,6 +18,10 @@
                 <input type="text" class="form-control reception form-control-sm dim" disabled id="dim">
             </div>
             <div class="form-group col-md-3">
+                <label for="reception">QUANTITE DISPO : </label>
+                <input type="text" class="form-control reception form-control-sm" disabled id="qtt_dispot">
+            </div>
+            <div class="form-group col-md-3">
                 <label for="reference">SORTIE : </label>
                 <input type="number" class="form-control reference form-control-sm" name="sortie" id="quantite">
             </div>

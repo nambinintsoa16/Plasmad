@@ -4,7 +4,7 @@ $(document).ready(function () {
 		select: function (data, iteme) {
 			let refnum_pe = iteme.item.value.trim();
 			$.post(
-				base_url + "gaines/detail_gaines_sortie",
+				base_url + "wip/detail_wipe_gaines_stock",
 				{ refnum_pe },
 				function (data) {
 					if (data.mesage == "false") {
@@ -13,6 +13,7 @@ $(document).ready(function () {
 						$("#client").val(data.client);
 						$("#dim").val(data.dim);
 						$("#Codeclient").val(data.BC_CODE);
+						$('#qtt_dispot').val(data.stock);
 					}
 				},
 				"json"
@@ -38,6 +39,7 @@ $(document).ready(function () {
         let BL = $("#BL").val();
 		let machine = $("#machine").val();
         let operateur = $("#operateur").val();
+		let qtt_dispot = $("#qtt_dispot").val();
       
         let obs = $("#obs").val();
         if(date==""){
@@ -46,6 +48,8 @@ $(document).ready(function () {
             alertMessage("Erreur!", "Refnum commande non valide.", "error", "btn btn-danger");
         }else if(quantite ==""){
             alertMessage("Erreur!", "Quantité invalide.", "error", "btn btn-danger");
+		}else if(quantite > qtt_dispot){	
+			alertMessage("Erreur!", "Stock non diponible.", "error", "btn btn-danger");
         }else{
 		$.post(
 			base_url + "wip/wip_gaine_save_sortie",

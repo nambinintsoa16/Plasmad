@@ -162,6 +162,25 @@ class wip extends My_Controller
     }
     echo json_encode($reponse);
   }
+
+  public function detail_wipe_gaines_stock(){
+	$this->load->model('global');
+	$refnum_pe = $this->input->post("refnum_pe");
+	$reponse =$this->commande->select_commande(["BC_PE"=>$refnum_pe]); 
+	$methodOk = $reponse != null;
+	$resultat = ['message'=>false];
+	if($methodOk){
+		$resultat['client']=$reponse->BC_CLIENT;
+		$resultat['dim']=$reponse->BC_DIMENSION;
+		$resultat['code']=$reponse->BC_CODE;
+		$stock  = $this->wip_stock_gaines_plasmad->get_detail_wip_stock_gaines_plasmad(["BC_ID"=>$refnum_pe]);
+		$resultat['stock']=$stock->STF_QUANTITE;
+		//$resultat['tail']= $this->global->get_distinct_colum(["BC_ID"=>$reponse->BC_PE],"STF_TAIL AS 'tail'","stock_gaines_plasmad"); 
+		
+	}
+	echo json_encode($resultat);
+}
+
 	public function wip_gaine_save_sortie(){
 		$date = $this->input->post("date");
 		$refnum = $this->input->post("refnum");
