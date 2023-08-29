@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	$("#refnum").autocomplete({
-		source: base_url + "Commercial/autocomplet_commande",
+		source: base_url + "wip/autocomplet_stock_wipe_gane_plaine",
 		select: function (data, iteme) {
 			let refnum_pe = iteme.item.value.trim();
 			$.post(
@@ -19,7 +19,12 @@ $(document).ready(function () {
 			);
 		},
 	});
-  
+    $('#operateur').autocomplete({
+        source: base_url + "Production/autocomplete_operateur",
+    });
+    $('#machine').autocomplete({
+        source: base_url + "Production/autocomplete_machine",
+    });
     $("#taille").autocomplete({
         source: base_url + "gaines/autocomplet_taille_gaines",
     });
@@ -31,6 +36,8 @@ $(document).ready(function () {
         let dim = $("#dim").val();
         let quantite = $("#quantite").val();
         let BL = $("#BL").val();
+		let machine = $("#machine").val();
+        let operateur = $("#operateur").val();
       
         let obs = $("#obs").val();
         if(date==""){
@@ -42,7 +49,7 @@ $(document).ready(function () {
         }else{
 		$.post(
 			base_url + "wip/wip_gaine_save_sortie",
-			{ date, refnum, client, dim, quantite, obs,BL },
+			{ date, refnum, client, dim, quantite, obs,BL,machine,operateur },
 			function (data) {}
 		)
 			.fail(() => {

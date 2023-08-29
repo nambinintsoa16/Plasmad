@@ -152,6 +152,16 @@ class wip extends My_Controller
 		   echo $this->wip_stock_gaines_plasmad_imprimer->insert_wip_stock_gaines_imprimer_plasmad($data);
 		}
 	}
+	public function autocomplet_stock_wipe_gane_plaine()
+  {
+    $mot = $this->input->get('term');
+    $data = $this->wip_stock_gaines_plasmad->get_wip_stock_gaines_plasmad("BC_ID like '%$mot%' LIMIT 10");
+    $reponse = array();
+    foreach ($data as $key => $data) {
+      $reponse[] = $data->BC_ID;
+    }
+    echo json_encode($reponse);
+  }
 	public function wip_gaine_save_sortie(){
 		$date = $this->input->post("date");
 		$refnum = $this->input->post("refnum");
@@ -161,6 +171,9 @@ class wip extends My_Controller
 		$quantite = $this->input->post("quantite");
 		$obs = $this->input->post("obs");
 		$BL = $this->input->post("BL");
+		$machine = $this->input->post("machine");
+		$operateur = $this->input->post("operateur");
+		
 
 		$reponse = $this->wip_stock_gaines_plasmad->get_detail_wip_stock_gaines_plasmad(["BC_ID"=>$refnum]);
 		$methodOk = $reponse !=null;
@@ -176,7 +189,9 @@ class wip extends My_Controller
 					"SF_QUANTITE"=>$quantite, 
 					"STF_OBSE"=>$obs, 
 					"SF_DIM"=>$dim, 
-					"SF_CLIENT"=>$client
+					"SF_CLIENT"=>$client, 
+					"SF_OPERATEUR"=>$operateur, 
+					"SF_MACHINE"=>$machine
 				];
 				echo $this->wip_sortie_gaines->insert_data_wip_sortie_gaines($data_sortie);
 			}
