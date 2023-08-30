@@ -48,7 +48,7 @@ $(document).ready(function () {
             alertMessage("Erreur!", "Refnum commande non valide.", "error", "btn btn-danger");
         }else if(quantite ==""){
             alertMessage("Erreur!", "Quantité invalide.", "error", "btn btn-danger");
-		}else if(parseFloat(qtt_dispot) > parseFloat(quantite)){	
+		}else if(parseFloat(quantite) > parseFloat(qtt_dispot)){	
 			alertMessage("Erreur!", "Stock non diponible.", "error", "btn btn-danger");
         }else{
 		$.post(
